@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import NavBar from "./components/navbar/Navbar";
+import LanguageBar from "./components/language/Language";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+export const ScreenContext = React.createContext();
 function App() {
+  const muiTheme = useTheme();
+  const matches = useMediaQuery(muiTheme.breakpoints.down("md"));
+  const matchesSmallScreen = useMediaQuery(muiTheme.breakpoints.down("xs"));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ScreenContext.Provider value={{ matches, matchesSmallScreen }}>
+      <div className="App">
+        {/* <Box
+          sx={{
+            fontFamily: "WeblySleek_UI_Normal",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Raleway
+        </Box> */}
+        {!matches && <LanguageBar />}
+
+        <NavBar />
+      </div>
+    </ScreenContext.Provider>
   );
 }
 

@@ -1,0 +1,35 @@
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0 !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  outline: none;
+  border: none;
+}
+
+li {
+  text-align: left !important;
+}
+
+li > a {
+  text-align: left !important;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 12px;
+  padding-left: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.shadowBoxTwo {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.shadowBoxOne {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
