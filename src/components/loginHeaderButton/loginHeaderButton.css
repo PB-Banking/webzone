@@ -1,3 +1,20 @@
 .expandSize {
   font-size: 1.1rem;
 }
+
+.burgerButton {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  @media screen and (max-width: 900px) {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  @media screen and (max-width: ) {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+.nonBurgerButton {
+  padding-left: 15px;
+}

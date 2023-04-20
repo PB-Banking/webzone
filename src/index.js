@@ -51,6 +51,11 @@ const theme = createTheme({
     drawerHeightSm: "3.938rem",
     drawerHeightXs: "2.875rem",
   },
+  eTransferLogoWidths: {
+    closeIconWidth: "1.6rem",
+    eTransferLogoWidthMd: "2.8rem",
+    eTransferLogoWidthLg: "100%",
+  },
   appBarBackground: {
     color: "#146243",
   },

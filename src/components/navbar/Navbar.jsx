@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import eTransferLogo from "../.././assets/etransfer.svg";
+import EtransferLogo from "../eTransferLogo/ETransferLogo";
 import Select from ".././select/Select";
 import "./navbar.css";
 import { ScreenContext } from "../../App";
@@ -45,6 +45,14 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  const getSize = () => {
+    if (matches) {
+      return muiTheme.eTransferLogoWidths.eTransferLogoWidthMd;
+    } else {
+      return muiTheme.eTransferLogoWidths.eTransferLogoWidthLg;
+    }
+  };
+
   return (
     <AppBar
       position="static"
@@ -73,7 +81,7 @@ function ResponsiveAppBar() {
           height: "100%",
           paddingLeft: {
             xs: "0px",
-            sm: "15px",
+            sm: "0px",
             md: "15px",
             lg: "15px",
             xl: "15px",
@@ -123,7 +131,7 @@ function ResponsiveAppBar() {
             LOGOss
           </Typography> */}
 
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          {/* <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="small"
               aria-label="account of current user"
@@ -160,12 +168,13 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
+
+          <Select position="left" listTwo={[...pages]} />
 
           <div
             style={{
               display: "flex",
-
               alignItems: "center",
             }}
           >
@@ -175,19 +184,7 @@ function ResponsiveAppBar() {
               style={{ width: "3.5rem", marginRight: "33px" }}
               sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  height: "100%",
-                }}
-              >
-                <img
-                  src={eTransferLogo}
-                  alt="etransfer"
-                  style={{ width: "100%" }}
-                />
-              </div>
+              <EtransferLogo logoWidth={getSize()} />
             </a>
           </div>
 
@@ -272,7 +269,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box> */}
-          <Select />
+          <Select position="right" />
         </Toolbar>
       </Container>
     </AppBar>

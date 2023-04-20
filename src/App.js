@@ -10,9 +10,14 @@ export const ScreenContext = React.createContext();
 function App() {
   const muiTheme = useTheme();
   const matches = useMediaQuery(muiTheme.breakpoints.down("md"));
+  const matchesSlightlySmallScreen = useMediaQuery(
+    muiTheme.breakpoints.down("sm")
+  );
   const matchesSmallScreen = useMediaQuery(muiTheme.breakpoints.down("xs"));
   return (
-    <ScreenContext.Provider value={{ matches, matchesSmallScreen }}>
+    <ScreenContext.Provider
+      value={{ matches, matchesSmallScreen, matchesSlightlySmallScreen }}
+    >
       <div className="App">
         {/* <Box
           sx={{
